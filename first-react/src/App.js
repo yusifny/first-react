@@ -1,21 +1,25 @@
 import './App.css';
+import './components/Employee'
+import Employee from './components/Employee';
+import ErrMsg from './components/ErrorMsg';
 
 function App() {
+  const showEmployee = false;
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Hello, world!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    {showEmployee ? 
+    (
+      <>
+        <Employee name="Josip" surname="Laurel" age="30" role="CTO" />
+        <Employee name="Lorem" surname="Hesto" age="28" role="Senior Developer" />
+        <Employee name="John" surname="Harvich" age="22" role="Mid Developer"/>
+        <Employee name="Elen" surname="Soya" age="24"/>
+      </>
+    ) :
+    <>
+      <ErrMsg />
+    </>
+    }
     </div>
   );
 }
